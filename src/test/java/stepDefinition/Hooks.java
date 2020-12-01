@@ -1,5 +1,7 @@
 package stepDefinition;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -19,6 +21,8 @@ public class Hooks {
     @After
     public void close_the_chrome_broswer() throws InterruptedException {
     	WebDriver driver_close = new ChromeDriver();
+    	driver_close.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     	driver_close.close();
+    	driver_close.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 }
