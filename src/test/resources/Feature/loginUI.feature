@@ -30,42 +30,43 @@ Scenario Outline: Login with incorrect credentails
 	And User clicks Login button 
 	Then Login fails with error message "<error_message>" 
 	
-    Examples: 
-      | email                          | password           | error_message                          | 
-      | "admin@eaton.com"              | "valid password"   | "Invalid Email or Password"            | 
-      | "fadr_support_admin@eaton.com" | "invalid password" | "Invalid Email or Password"            | 
-      | "admin@eaton"                  | "valid password"   | "E-mail must be a valid email address" | 
+	Examples: 
+		| email                          | password           | error_message                          | 
+		| "admin@eaton.com"              | "valid password"   | "Invalid Email or Password"            | 
+		| "fadr_support_admin@eaton.com" | "invalid password" | "Invalid Email or Password"            | 
+		| "admin@eaton"                  | "valid password"   | "E-mail must be a valid email address" | 
 		
 Scenario Outline: Login with invalid format and blank credentials 
 	When Enter "<email>" and "<password>" 
 	And User clicks Login button 
 	Then Login fails with error message "<error_message>" 
 	
-    Examples: 
-      | email                          | password         | error_message          | 
-      | "fadr_support_admin@eaton.com" |                  | "Password is required" | 
-      |                                | "valid password" | "E-mail is required"   | 
-      |                                |                  | "E-mail is required"   | 		
+	Examples: 
+		| email                          | password         | error_message          | 
+		| "fadr_support_admin@eaton.com" |                  | "Password is required" | 
+		|                                | "valid password" | "E-mail is required"   | 
+		|                                |                  | "E-mail is required"   | 		
 Scenario Outline: Remember Me button 
-	Given Enter valid credentials 
+	When Enter "<email>" and "<password>" 
 	When Remember Me button is <button> 
-	And  User clicks the logout button
-	Then Verify if username field is <username field> 
+	And User clicks Login button 
+	And User clicks the logout button 
+	Then Verify if username field on login page is <username field> 
 	
 	Examples: 
-		| button    | username field |
-		| unchecked | not autofilled |
-		| checked   | autofilled     |
+		| button    | username field | email                        | password      | 
+		| unchecked | not autofilled | fadr_support_admin@eaton.com | validpassword | 
+		| checked   | autofilled     | fadr_support_admin@eaton.com | validpassword | 
 		
 Scenario Outline: Password masking and unmasking 
-	Given Enter any credentials 
+	When Enter "<email>" and "<password>" 
 	When Eye button is clicked <times> 
 	Then Password should be <visibility> 
 	
 	Examples: 
-		| times | visibility |
-		| once  | unmasked   |
-		| twice | masked     |
+		| times | visibility | email                        | password           | 
+		| once  | unmasked   | fadr_support_admin@eaton.com | somerandompassword | 
+		| twice | masked     | fadr_support_admin@eaton.com | somerandompassword | 
 		
 Scenario: Forgot password 
 	When Forgot password link is clicked 
