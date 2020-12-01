@@ -9,6 +9,7 @@ import cucumber.api.java.en.When;
 public class loginUI {
 	@Given("^Open the browser$")
 	public void open_the_browser() throws Throwable {
+		System.out.println("Browser open");
 		throw new PendingException();
 	}
 
@@ -23,8 +24,7 @@ public class loginUI {
 	}
 
 	@When("^Enter \"([^\"]*)\" and \"([^\"]*)\"$")
-	public void enter_something_and_something(String email, String password, String strArg1, String strArg2)
-			throws Throwable {
+	public void enter_something_and_something(String email, String password, String strArg1, String strArg2) throws Throwable {
 		throw new PendingException();
 	}
 
@@ -83,8 +83,8 @@ public class loginUI {
 		throw new PendingException();
 	}
 
-	@And("^Logout$")
-	public void logout() throws Throwable {
-		throw new PendingException();
-	}
+    @And("^User clicks the logout button$")
+    public void user_clicks_the_logout_button() throws Throwable {
+        throw new PendingException();
+    }
 }

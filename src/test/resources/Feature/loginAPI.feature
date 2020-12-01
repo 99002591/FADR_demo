@@ -21,11 +21,11 @@ Feature: API validation for negative test cases in Login
 
     Scenario Outline: Validate Login API UnSuccessfully 
   
-    Given Prepare <RequestBody> for Login API 
-     When POST request on Login API 
-     Then Status code returned is <status_code> 
-      And Error code returned is <error_code>
-      And Response body returned is <error_description> 
+    Given Prepare "<RequestBody>" for Login API
+     When POST request on Login API
+     Then Status code returned is "<status_code>"
+      And Error code returned is "<error_code>"
+      And Response body returned is "<error_description>"
     Examples: 
       | Test description                | RequestBody                        | status_code | error_code | error_description                             | 
       | Test with invalid email format  | LoginWithInvalidEmailFormat.json   | 400         | 9007       | Please provide valid email address            | 
@@ -36,6 +36,3 @@ Feature: API validation for negative test cases in Login
       | Test without credentials        | LoginWithoutCredentials.json       | 400         | 1001       | User name or password cannot be null or empty | 
       | Test without email attribute    | LoginWithoutEmailAttribute.json    | 400         | 1001       | User name or password cannot be null or empty | 
       | Test without password attribute | LoginWithoutPasswordAttribute.json | 400         | 1001       | User name or password cannot be null or empty | 
-  
-  
-
