@@ -10,3 +10,7 @@
 [1201/115442.962:ERROR:crash_report_database_win.cc(585)] GetFileAttributes C:\Users\99002591\AppData\Local\Temp\scoped_dir12732_348839266\Crashpad: The system cannot find the file specified. (0x2)
 [1201/115641.270:ERROR:crash_report_database_win.cc(585)] GetFileAttributes C:\Users\99002591\AppData\Local\Temp\scoped_dir4744_1501077420\Crashpad: The system cannot find the file specified. (0x2)
 [1201/115652.730:ERROR:crash_report_database_win.cc(585)] GetFileAttributes C:\Users\99002591\AppData\Local\Temp\scoped_dir13524_1489553421\Crashpad: The system cannot find the file specified. (0x2)
+[1201/142527.826:ERROR:crash_report_database_win.cc(585)] GetFileAttributes C:\Users\99002591\AppData\Local\Temp\scoped_dir12488_448911019\Crashpad: The system cannot find the file specified. (0x2)
+[1201/143428.345:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1201/143428.354:ERROR:prune_crash_reports.cc(36)] PruneCrashReportDatabase: Failed to get pending reports
+[1201/163251.939:ERROR:crash_report_database_win.cc(585)] GetFileAttributes C:\Users\99002591\AppData\Local\Temp\scoped_dir9816_1048150948\Crashpad: The system cannot find the file specified. (0x2)
