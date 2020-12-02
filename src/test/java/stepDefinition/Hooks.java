@@ -18,7 +18,7 @@ public class Hooks {
     	System.setProperty("webdriver.chrome.driver", "D:/Eclipse_Workspace/Selenium/WebDrivers/chromedriver_87.exe");
     	driver = new ChromeDriver();
 		driver.get("https://dev-portal.eastus.cloudapp.azure.com/#/");
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
     }
 

@@ -47,17 +47,17 @@ As Admin
       | Login with blank email              |                              | valid@123      | E-mail is required   | 
       | Login with blank email and password |                              |                | E-mail is required   | 
   
-  Scenario Outline: Verify the when remember me check box is checked, email should be autofilled 
-     When Enter "<email>" and "<password>" 
-     When Remember Me button is <button> 
-      And User clicks Login button 
-      And User clicks the logout button 
-     Then Verify if username field on login page is <username field> 
-  
-    Examples: 
-      | button    | username field | email                        | password      | 
-      | unchecked | not autofilled | fadr_support_admin@eaton.com | valid@123     | 
-      | checked   | autofilled     | fadr_support_admin@eaton.com | valid@123     | 
+#  Scenario Outline: Verify the when remember me check box is checked, email should be autofilled 
+#     When Enter "<email>" and "<password>" 
+#     When Remember Me button is <button> 
+#      And User clicks Login button 
+#      And User clicks the logout button 
+#     Then Verify if username field on login page is <username field> 
+#  
+#    Examples: 
+#      | button    | username field | email                        | password      | 
+#      | unchecked | not autofilled | fadr_support_admin@eaton.com | valid@123     | 
+#      | checked   | autofilled     | fadr_support_admin@eaton.com | valid@123     | 
   
   Scenario Outline: Password masking and unmasking 
      When Enter "<email>" and "<password>" 
