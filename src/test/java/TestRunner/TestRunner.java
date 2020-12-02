@@ -11,6 +11,7 @@ import cucumber.api.junit.Cucumber;
         features = "src/test/resources/Feature/loginUI.feature",
         glue= "stepDefinition",
         plugin =  "html:target/Report-html",
+        tags = "@Incorrect",
         monochrome = true )
 
 public class TestRunner {

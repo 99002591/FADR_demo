@@ -13,7 +13,7 @@ public class Hooks {
 	
 	public static WebDriver driver;
 	
-    @Before
+    @Before("@Incorrect") 
     public void open_the_chrome_browser() {
     	System.setProperty("webdriver.chrome.driver", "D:/Eclipse_Workspace/Selenium/WebDrivers/chromedriver_87.exe");
     	driver = new ChromeDriver();

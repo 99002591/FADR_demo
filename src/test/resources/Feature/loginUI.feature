@@ -24,6 +24,7 @@ As Admin
 #  Background: 
 #    Given navigate to the FADR Login page
   
+  @Incorrect
   Scenario Outline: Login with incorrect credentails, that is, "<Description>" 
      When Enter "<email>" and "<password>" 
       And User clicks Login button
