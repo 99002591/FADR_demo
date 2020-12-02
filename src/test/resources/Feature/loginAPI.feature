@@ -16,7 +16,6 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
 Feature: API validation for negative test cases in Login
 
     Scenario Outline: Validate Login API UnSuccessfully 

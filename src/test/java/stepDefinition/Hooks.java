@@ -7,23 +7,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.When;
 
 public class Hooks {
 	
-	WebDriver driver;
+	public static WebDriver driver;
 	
     @Before
     public void open_the_chrome_browser() {
-    	System.setProperty("webdriver.chrome.driver", "D:/Eclipse_Workspace/Selenium/WebDrivers/chromedriver.exe");
+    	System.setProperty("webdriver.chrome.driver", "D:/Eclipse_Workspace/Selenium/WebDrivers/chromedriver_87.exe");
     	driver = new ChromeDriver();
-		driver.get("https://www.google.co.in");
+		driver.get("https://dev-portal.eastus.cloudapp.azure.com/#/");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
     }
 
     @After
     public void close_the_chrome_broswer() throws InterruptedException {
-//    	WebDriver driver_close = new ChromeDriver();
-    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    	Thread.sleep(3000);
     	driver.close();
     }
     

@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
@@ -31,8 +30,6 @@ public class loginAPI {
     @When("^POST request on Login API$")
     public void post_request_on_login_api() throws Throwable {
     	System.setProperty("webdriver.chrome.driver", "D:/Eclipse_Workspace/Selenium/WebDrivers/chromedriver.exe");
-    	driver = new ChromeDriver();
-    	driver.request
         throw new PendingException();
     }
 

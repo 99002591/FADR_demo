@@ -16,7 +16,7 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag 
+@UI
 Feature: Login with UI 
 I want to login
 As Admin
@@ -26,25 +26,25 @@ As Admin
   
   Scenario Outline: Login with incorrect credentails, that is, "<Description>" 
      When Enter "<email>" and "<password>" 
-      And User clicks Login button 
+      And User clicks Login button
      Then Login fails with error message "<error_message>" 
   
     Examples: 
       | Description                             | email                        | password           | error_message                        | 
-      | Login with incorrect email              | admin@eaton.com              | valid password     | Invalid Email or Password            | 
-      | Login with incorrect password           | fadr_support_admin@eaton.com | somerandompassword | Invalid Email or Password            | 
-      | Login with invalid email format         | admin@eaton                  | valid password     | E-mail must be a valid email address | 
-      | Login with incorrect email and password | admin@eaton.com              | somerandompassword | Invalid Email or Password            | 
+      | Login with incorrect email              | admin@eaton.com              | valid@123          | Invalid Email or Password            | 
+      | Login with incorrect password           | fadr_support_admin@eaton.com | qwert_9877@BH      | Invalid Email or Password            | 
+      | Login with invalid email format         | admin@eaton                  | valid@123          | E-mail must be a valid email address | 
+      | Login with incorrect email and password | admin@eaton.com              | qwert_9877@BH      | Invalid Email or Password            | 
   
   Scenario Outline: Login with blank credentials, that is, "<Description>" 
      When Enter "<email>" and "<password>" 
-      And User clicks Login button 
+      And User clicks Login button
      Then Login fails with error message "<error_message>" 
   
     Examples: 
       | Description                         | email                        | password       | error_message        | 
       | Login with blank password           | fadr_support_admin@eaton.com |                | Password is required | 
-      | Login with blank email              |                              | valid password | E-mail is required   | 
+      | Login with blank email              |                              | valid@123      | E-mail is required   | 
       | Login with blank email and password |                              |                | E-mail is required   | 
   
   Scenario Outline: Verify the when remember me check box is checked, email should be autofilled 
@@ -56,8 +56,8 @@ As Admin
   
     Examples: 
       | button    | username field | email                        | password      | 
-      | unchecked | not autofilled | fadr_support_admin@eaton.com | validpassword | 
-      | checked   | autofilled     | fadr_support_admin@eaton.com | validpassword | 
+      | unchecked | not autofilled | fadr_support_admin@eaton.com | valid@123     | 
+      | checked   | autofilled     | fadr_support_admin@eaton.com | valid@123     | 
   
   Scenario Outline: Password masking and unmasking 
      When Enter "<email>" and "<password>" 
@@ -66,8 +66,8 @@ As Admin
   
     Examples: 
       | times | visibility | email                        | password           | 
-      | once  | unmasked   | fadr_support_admin@eaton.com | somerandompassword | 
-      | twice | masked     | fadr_support_admin@eaton.com | somerandompassword | 
+      | once  | unmasked   | fadr_support_admin@eaton.com | qwert_9877@BH      | 
+      | twice | masked     | fadr_support_admin@eaton.com | qwert_9877@BH      | 
   
   Scenario: Forgot password 
      When Forgot password link is clicked 
