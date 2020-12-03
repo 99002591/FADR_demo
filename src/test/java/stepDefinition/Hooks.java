@@ -7,13 +7,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.When;
 
 public class Hooks {
 	
 	public static WebDriver driver;
+
 	
-    @Before("@Incorrect") 
+	@Before("@First")
     public void open_the_chrome_browser() {
     	System.setProperty("webdriver.chrome.driver", "D:/Eclipse_Workspace/Selenium/WebDrivers/chromedriver_87.exe");
     	driver = new ChromeDriver();
@@ -22,7 +22,7 @@ public class Hooks {
 		driver.manage().window().maximize();
     }
 
-    @After
+    @After("@Last")
     public void close_the_chrome_broswer() throws InterruptedException {
     	Thread.sleep(3000);
     	driver.close();

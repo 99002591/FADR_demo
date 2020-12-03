@@ -48,7 +48,7 @@ public class loginUI{
 	
 	@Then("^Login fails with error message \"([^\"]*)\"$")
 	public void login_fails_with_error_message(String errormessage) throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		String actual = driver.findElement(By.xpath("//*[@class=\"mat-error ng-star-inserted\"]")).getText();
 		Assert.assertEquals(actual, errormessage);
 	}
@@ -92,7 +92,6 @@ public class loginUI{
 
 	@And("^User clicks Login button$")
 	public void user_clicks_login_button() {
-		System.out.println("Login Click");
 		driver.findElement(By.xpath("//span[contains(text(),'LOG IN')]")).click();
 	}
 
