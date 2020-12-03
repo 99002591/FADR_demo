@@ -1,18 +1,15 @@
 package stepDefinition;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
 
 import REST.readJSON;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.ValidatableResponse;
-import static org.junit.Assert.assertThat;
-import static org.hamcrest.MatcherAssert.*;
-import static org.hamcrest.Matchers.*;
 
 //import org.hamcrest.core.IsEqual;
 
@@ -56,12 +53,13 @@ public class loginAPI {
 //    	assertThat(response_all.extract().response().body().path("errorCode"), is(errorcode));
 //    	JsonPath js = new JsonPath(response_all.toString());
 //    	int error_code = (js.getString("errorCode"));
-    	assertThat(response_all.extract().body().asString().pa, equalTo(errorcode));
+    	assertThat(response_all.extract().jsonPath().getString("errorCode"), equalTo(errorcode));
 
     	}
 
     @And("^Response body returned is \"([^\"]*)\"$")
     public void response_body_returned_is_something(String errordescription){
+    	assertThat(response_all.extract().jsonPath().getString("errorDescription"), equalTo(errordescription));
     }
 
 }
