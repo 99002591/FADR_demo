@@ -1,4 +1,4 @@
-package REST;
+package utils;
 
 public class pojo {
 

@@ -24,7 +24,7 @@ public class Hooks {
 
     @After("@Last")
     public void close_the_chrome_broswer() throws InterruptedException {
-    	Thread.sleep(3000);
+    	//Thread.sleep(3000);
     	driver.close();
     }
     

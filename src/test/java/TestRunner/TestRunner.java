@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 
 
 @CucumberOptions(
-        features = "src/test/resources/Feature",
+        features = "src/test/resources/Feature/loginAPI.feature",
         glue= "stepDefinition",
         plugin =  "html:target/Report-html",
         monochrome = true )
