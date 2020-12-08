@@ -10,7 +10,7 @@ import cucumber.api.java.en.When;
 
 public class loginUI{
 	WebDriver driver = Hooks.driver;
-	
+		
 	@When("^Enter \"([^\"]*)\" and \"([^\"]*)\"$")
 	public void enter_the_email_and_password(String email, String password){
 		driver.findElement(By.id("email")).sendKeys(email);
